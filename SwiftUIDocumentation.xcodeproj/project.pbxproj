@@ -14,6 +14,7 @@
 		C9FFCB512AB85DA900A08D8A /* SwiftUIDocumentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFCB502AB85DA900A08D8A /* SwiftUIDocumentationTests.swift */; };
 		C9FFCB5B2AB85DA900A08D8A /* SwiftUIDocumentationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFCB5A2AB85DA900A08D8A /* SwiftUIDocumentationUITests.swift */; };
 		C9FFCB5D2AB85DA900A08D8A /* SwiftUIDocumentationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFCB5C2AB85DA900A08D8A /* SwiftUIDocumentationUITestsLaunchTests.swift */; };
+		C9FFCB6E2AB8640600A08D8A /* SwiftPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = C9FFCB6D2AB8640600A08D8A /* SwiftPersistence */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FFCB6E2AB8640600A08D8A /* SwiftPersistence in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = SwiftUIDocumentation;
+			packageProductDependencies = (
+				C9FFCB6D2AB8640600A08D8A /* SwiftPersistence */,
+			);
 			productName = SwiftUIDocumentation;
 			productReference = C9FFCB3C2AB85DA700A08D8A /* SwiftUIDocumentation.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = C9FFCB332AB85DA700A08D8A;
+			packageReferences = (
+				C9FFCB6C2AB8640600A08D8A /* XCRemoteSwiftPackageReference "SwiftPersistence" */,
+			);
 			productRefGroup = C9FFCB3D2AB85DA700A08D8A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -582,6 +590,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9FFCB6C2AB8640600A08D8A /* XCRemoteSwiftPackageReference "SwiftPersistence" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cheesetan/SwiftPersistence";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9FFCB6D2AB8640600A08D8A /* SwiftPersistence */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9FFCB6C2AB8640600A08D8A /* XCRemoteSwiftPackageReference "SwiftPersistence" */;
+			productName = SwiftPersistence;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C9FFCB342AB85DA700A08D8A /* Project object */;
 }

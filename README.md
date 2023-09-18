@@ -1,2 +1,2 @@
 # SwiftUIDocumentation
-SwiftUI Documentation by Basil, Gavin, Pavithraa and Matthias
+SwiftUI Documentation by Gavin, Pavithraa, Matthias and Basil

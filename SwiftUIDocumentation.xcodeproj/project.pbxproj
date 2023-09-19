@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9BDA0D82AB94D940092B54A /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BDA0D72AB94D940092B54A /* TodoList.swift */; };
 		C9FFCB402AB85DA700A08D8A /* SwiftUIDocumentationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFCB3F2AB85DA700A08D8A /* SwiftUIDocumentationApp.swift */; };
 		C9FFCB422AB85DA700A08D8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FFCB412AB85DA700A08D8A /* ContentView.swift */; };
 		C9FFCB442AB85DA900A08D8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9FFCB432AB85DA900A08D8A /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9BDA0D72AB94D940092B54A /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		C9FFCB3C2AB85DA700A08D8A /* SwiftUIDocumentation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDocumentation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9FFCB3F2AB85DA700A08D8A /* SwiftUIDocumentationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIDocumentationApp.swift; sourceTree = "<group>"; };
 		C9FFCB412AB85DA700A08D8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,8 @@
 		C9FFCB332AB85DA700A08D8A = {
 			isa = PBXGroup;
 			children = (
+				C9BDA0D72AB94D940092B54A /* TodoList.swift */,
+				C9FFCB412AB85DA700A08D8A /* ContentView.swift */,
 				C9FFCB3E2AB85DA700A08D8A /* SwiftUIDocumentation */,
 				C9FFCB4F2AB85DA900A08D8A /* SwiftUIDocumentationTests */,
 				C9FFCB592AB85DA900A08D8A /* SwiftUIDocumentationUITests */,
@@ -97,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				C9FFCB3F2AB85DA700A08D8A /* SwiftUIDocumentationApp.swift */,
-				C9FFCB412AB85DA700A08D8A /* ContentView.swift */,
 				C9FFCB432AB85DA900A08D8A /* Assets.xcassets */,
 				C9FFCB452AB85DA900A08D8A /* Preview Content */,
 			);
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BDA0D82AB94D940092B54A /* TodoList.swift in Sources */,
 				C9FFCB422AB85DA700A08D8A /* ContentView.swift in Sources */,
 				C9FFCB402AB85DA700A08D8A /* SwiftUIDocumentationApp.swift in Sources */,
 			);

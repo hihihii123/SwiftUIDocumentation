@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct newToDo: View {
+    @State var list = ""
+
+    @Binding var nowS: Array<toDo>
+    @Binding var now: Array<String>
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            TextField("Input here", text: $list)
+            Button {
+                
+                now.append(list)
+                list = ""
+            } label: {
+                Text("Confirm")
+            }
+        }
     }
 }
 
 #Preview {
-    newToDo()
+    newToDo(nowS: .constant([toDo(name: "", Due: Date(), done: false, archive: false)]), now: .constant([""]))
 }

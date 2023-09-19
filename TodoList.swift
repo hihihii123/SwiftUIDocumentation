@@ -9,46 +9,33 @@ import SwiftUI
 import SwiftPersistence
 
 struct TodoList: View {
-    @Persistent("now", store: .appStorage) var now = ["1"]
+    @Persistent("nowS", store: .fileManager) var nowS = [toDo(name: "finish this app", Due: Date(timeIntervalSince1970: TimeInterval(1)), done: false, archive: false)]
+    @Persistent("now", store: .fileManager) var now = ["finish this app"]
+
     @Persistent("time", store: .appStorage) var times = 0
-    @State var list = ""
-    struct toDo {
-        var name: String
-        var Due: Date
-        var done: Bool
-        var archive: Bool
-        var ExtraVar: String?
-        var ExtraVarDone: Bool?
-    }
+    @State var sheetA = false
     var body: some View {
         NavigationStack {
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Placeholder code")
-                TextField("Input here", text: $list)
-                Button {
-                    
-                    now.append(list)
-                    list = ""
-                } label: {
-                    Text("Confirm")
-                }
+                
                 List {
                     ForEach(now, id: \.self) {
                         value in
                         Text(value)
                             .swipeActions {
                                 Button{
+                                    if let valuee = now.firstIndex(of: value) {
+                                        nowS[valuee].archive = true
+                                    }
                                     now.remove(at: (now.firstIndex(of: value))!)
+                                    
                                 } label: {
                                     HStack {
-                                        Image(systemName: "trash")
+                                        Image(systemName: "archivebox")
                                     }
                                 }
                             }
-                            .tint(Color(red: 1, green: 0, blue: 0))
+                            .tint(Color(red: 0, green: 0.6, blue: 0.2))
                         
                     }
                     Button(role: .destructive) {
@@ -59,8 +46,30 @@ struct TodoList: View {
                     }
                 }
             }
+            .navigationTitle("Todo list")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    NavigationLink {
+                        archivedToDo()
+                    } label: {
+                        Image(systemName: "archivebox")
+                    }
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        sheetA = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
         }
-        .padding()
+        .sheet(isPresented: $sheetA) {
+            newToDo(nowS: $nowS, now: $now)
+        }
+        
+        
     }
 }
 

@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import SwiftPersistence
+
+
+struct toDo: Codable {
+    var name: String
+    var Due: Date
+    var done: Bool
+    var archive: Bool
+    var ExtraVar: String?
+    var ExtraVarDone: Bool?
+}
+

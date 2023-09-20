@@ -9,16 +9,19 @@ import SwiftUI
 
 struct newToDo: View {
     @State var list = ""
-
+    @State var date = Date(timeIntervalSince1970: 1694995205)
     @Binding var nowS: Array<toDo>
     @Binding var now: Array<String>
+    @Binding var bindednewsheeta: Bool
     var body: some View {
         List {
-            TextField("Input here", text: $list)
+            TextField("Name", text: $list)
+            DatePicker("Due Date", selection: $date)
             Button {
-                
+                nowS.append(toDo(name: list, Due: date, done: false, archive: false))
                 now.append(list)
                 list = ""
+                bindednewsheeta = false
             } label: {
                 Text("Confirm")
             }
@@ -27,5 +30,5 @@ struct newToDo: View {
 }
 
 #Preview {
-    newToDo(nowS: .constant([toDo(name: "", Due: Date(), done: false, archive: false)]), now: .constant([""]))
+    newToDo(nowS: .constant([toDo(name: "", Due: Date(), done: false, archive: false)]), now: .constant([""]), bindednewsheeta: .constant(true))
 }

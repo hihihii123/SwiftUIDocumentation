@@ -12,7 +12,19 @@ struct ContentView: View {
     var body: some View{
         NavigationStack {
             VStack {
-                Text("Hi!")
+                List {
+                    NavigationLink {
+                        TodoList()
+                    } label: {
+                        Text("Todolist app")
+                    }
+                    NavigationLink {
+                        Lesson1()
+                    } label: {
+                        Text("Lesson")
+                    }
+                    
+                }
             }
         }
     }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct newToDo: View {
     @State var list = ""
-    @State var date = Date(timeIntervalSince1970: 1694995205)
+    @State var date = Date()
     @Binding var nowS: Array<toDo>
     @Binding var now: Array<String>
     @Binding var bindednewsheeta: Bool

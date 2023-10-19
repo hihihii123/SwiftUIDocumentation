@@ -23,7 +23,15 @@ struct TodoList: View {
                         
                         value in
                         
-                        
+                        HStack {
+                            
+                            Button {
+                                nowS[now.firstIndex(of: value)!].done = (nowS[now.firstIndex(of: value)!].done) ? false : true
+                            } label: {
+                                Image(systemName: ((nowS[now.firstIndex(of: value)!].done) ? "checkmark.square" : "square"))
+                            }
+                            
+                            
                             NavigationLink {
                                 let valueeee = value
                                 todoview(now: $now,  bindedNowS: $nowS, bindedvalueeeee: .constant(valueeee))
@@ -31,27 +39,25 @@ struct TodoList: View {
                             } label: {
                                 Text(value)
                             }
-                                .swipeActions {
-                                    Button{
-                                        if let valuee = now.firstIndex(of: value) {
-                                            nowS[valuee].archive = true
-                                        }
-                                        now.remove(at: (now.firstIndex(of: value))!)
-                                        
-                                    } label: {
-                                        HStack {
-                                            Image(systemName: "archivebox")
-                                        }
+                            .swipeActions {
+                                Button{
+                                    if let valuee = now.firstIndex(of: value) {
+                                        nowS[valuee].archive = true
+                                    }
+                                    now.remove(at: (now.firstIndex(of: value))!)
+                                    
+                                } label: {
+                                    HStack {
+                                        Image(systemName: "archivebox")
                                     }
                                 }
+                            }
                             .tint(Color(red: 0, green: 0.6, blue: 0.2))
                             
-                            Button {
-                                nowS[now.firstIndex(of: value)!].done = (nowS[now.firstIndex(of: value)!].done) ? false : true
-                            } label: {
-                                Image(systemName: ((nowS[now.firstIndex(of: value)!].done) ? "checkmark.square" : "square"))
-                            }
+                            
                         }
+                        
+                        
                         
                     }
                     Button(role: .destructive) {
@@ -60,6 +66,7 @@ struct TodoList: View {
                     } label: {
                         Text("Remove all")
                     }
+                }
                 }
             }
             .navigationTitle("Todo list")
